@@ -101,6 +101,104 @@ Object shorthand can save space and time by allowing users to use the same name 
             function add(a, b) {
               return a + b;
               }
+  # operators in JavaScript:
+
+ **1. Arithmetic Operators:**
+These operators perform basic arithmetic operations on numerical values.
+
+  Addition(+),
+  Subtraction(-),
+  Multiplication(*),
+  Division(/),
+  Modulus (remainder)(%),
+  Exponentiation (ES6)(**).
+
+            let a = 10;
+            let b = 3;
+            
+            console.log(a + b); // 13
+            console.log(a - b); // 7
+            console.log(a * b); // 30
+            console.log(a / b); // 3.333...
+            console.log(a % b); // 1
+            console.log(a ** b); // 1000 (a raised to the power of b)
+
+**2.Assignment Operators:**
+These operators assign values to variables.
+
+ Assigns a value(=),
+ Adds and assigns(+=),
+ Subtracts and assigns(-=),
+ Multiplies and assigns(*=),
+ Divides and assigns(/=)
+ Modulus and assigns(%=)
+ Exponentiation and assigns (ES6)(**=)
+
+              let x = 5;
+              x += 3; // equivalent to x = x + 3
+              console.log(x); // 8
+              
+              let y = 10;
+              y *= 2; // equivalent to y = y * 2
+              console.log(y); // 20
+
+**3.Comparison Operators:**
+These operators compare two values and return a Boolean result (true or false).
+
+ Equal to(==),
+ Not equal to(!=),
+ Strictly equal to(===),
+ Strictly not equal to(!==),
+ Greater than(>),
+ Less than(<),
+ Greater than or equal to(>=),
+ Less than or equal to(<=).
+
+
+                let p = 5;
+                let q = "5";
+                
+                console.log(p == q); // true (loose equality, coerces types)
+                console.log(p === q); // false (strict equality, compares types)
+                console.log(p != q); // false
+                console.log(p !== q); // true
+                console.log(p > 3); // true
+                console.log(p < 3); // false
+
+**4.Logical Operators:**
+These operators are used to combine or manipulate Boolean values.
+
+Logical AND(&&),
+Logical OR(||),
+Logical NOT(!).
+
+                let isTrue = true;
+                let isFalse = false;
+                
+                console.log(isTrue && isFalse); // false (logical AND)
+                console.log(isTrue || isFalse); // true (logical OR)
+                console.log(!isTrue); // false (logical NOT)
+
+**5.Conditional (Ternary) Operator:**
+This operator is a shorthand for an if-else statement.
+
+                let age = 17;
+                let status = (age >= 18) ? "Adult" : "Minor";
+                console.log(status); // "Minor"
+
+
+**6.Type Operators:**
+
+**typeof** Returns a string indicating the type of a value
+
+**instanceof** Checks if an object is an instance of a particular class
+
+                console.log(typeof 42);        // "number"
+                console.log(typeof "hello");   // "string"
+                console.log(typeof true);      // "boolean"
+                
+                let arr = [1, 2, 3];
+                console.log(arr instanceof Array); // true
 
 
            
