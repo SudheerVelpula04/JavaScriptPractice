@@ -62,4 +62,46 @@ The first set of styles applies to the first string with %c, and the second %c g
 
 **Object Shorthand:**
 Object shorthand can save space and time by allowing users to use the same name for assigning variables and key values.
+# Data Types :
+**Primitive:** its mean immutable dataType.
+
+
+**1. Number:** Represents both integer and floating point numbers.
+
+        '5','4.15'
+        
+  **2. String:**   Represents a Sequence of characters
+  
+         'hello' , "Hello"
+
+  **3. Boolean:**  Represents a 'true' are 'false'
+
+           'true' are 'false'          
+           
+ **4.undefined:**  Represents a variable that has been declared but not assigned a value
+
+          undefind
+
+**5 .null:** Represents a intentional absence of any value
+
+          null
+
+**Non-Primitive(or)Complex DataTypes:** its mean mutable dataType.
+
+**1. Objects:** Represents a collection of key-value pairs, where keys are strings (or symbols) and values can be of any data type. Objects can be used to represent various structures like arrays, functions, and custom-defined types.
+
+        { name: 'John', age: 30 }
+        
+**2. Arrays:** Represents an ordered list of values, accessed using numerical indices.
+
+             [1,2,3,4]
+
+**3. Functions:** Represents a block of reusable code that can be invoked with arguments to perform a specific task. Functions are also objects in JavaScript.
+
+            function add(a, b) {
+              return a + b;
+              }
+
+
+           
 
