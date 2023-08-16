@@ -214,6 +214,80 @@ The if statement is the most basic form of a conditional statement. It evaluates
             }
 
 
+              let age = 18;
+              if (age >= 18) {
+                  console.log("You are eligible to vote.");
+              }
 
            
+**2. if...else Statement:**
+
+The if...else statement allows you to provide an alternative block of code to execute when the condition is false.
+
+            if (condition) {
+                // Code to be executed if the condition is true
+            } else {
+                // Code to be executed if the condition is false
+            }
+
+            Examp:
+            let temperature = 25;
+            if (temperature > 30) {
+                console.log("It's hot outside.");
+            } else {
+                console.log("It's not too hot.");
+            }
+**3.else if Statement:**
+
+The else if statement lets you check multiple conditions in sequence and execute the corresponding block of code for the first true condition.
+
+              if (condition1) {
+                  // Code to be executed if condition1 is true
+              } else if (condition2) {
+                  // Code to be executed if condition2 is true
+              } else {
+                  // Code to be executed if no conditions are true
+              }
+
+
+              let score = 85;
+              if (score >= 90) {
+                  console.log("You got an A.");
+              } else if (score >= 80) {
+                  console.log("You got a B.");
+              } else {
+                  console.log("You got a lower grade.");
+              }
+
+**4. switch Statement:**
+
+The switch statement is used when you have a specific value to compare against multiple possible cases. It's a cleaner alternative to using multiple if...else statements.
+
+            switch (expression) {
+                case value1:
+                    // Code to be executed if expression matches value1
+                    break;
+                case value2:
+                    // Code to be executed if expression matches value2
+                    break;
+                // ...
+                default:
+                    // Code to be executed if no cases match expression
+            }
+
+            Examp:
+            let day = "Monday";
+            switch (day) {
+                case "Monday":
+                    console.log("It's the start of the week.");
+                    break;
+                case "Friday":
+                    console.log("TGIF!");
+                    break;
+                default:
+                    console.log("It's a regular day.");
+            }
+
+
+            
 
