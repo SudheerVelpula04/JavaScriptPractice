@@ -200,6 +200,20 @@ This operator is a shorthand for an if-else statement.
                 let arr = [1, 2, 3];
                 console.log(arr instanceof Array); // true
 
+# Conditional Statements:
+
+onditional statements in JavaScript allow you to execute different blocks of code based on whether a certain condition is true or false. These statements are crucial for creating dynamic and responsive programs. There are mainly three types of conditional statements in JavaScript: if statements, else if statements, and switch statements.
+
+**1. if Statement:**
+
+The if statement is the most basic form of a conditional statement. It evaluates a given condition and, if the condition is true, executes the code inside the block that follows.
+
+
+            if (condition) {
+                // Code to be executed if the condition is true
+            }
+
+
 
            
 
