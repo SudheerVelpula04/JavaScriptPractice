@@ -282,7 +282,7 @@ The switch statement is used when you have a specific value to compare against m
                     console.log("It's the start of the week.");
                     break;
                 case "Friday":
-                    console.log("TGIF!");
+                    console.log("Its a WeekEnd");
                     break;
                 default:
                     console.log("It's a regular day.");
