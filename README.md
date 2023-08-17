@@ -282,12 +282,40 @@ The switch statement is used when you have a specific value to compare against m
                     console.log("It's the start of the week.");
                     break;
                 case "Friday":
-                    console.log("TGIF!");
+                    console.log("Its a WeekEnd");
                     break;
                 default:
                     console.log("It's a regular day.");
             }
 
 
-            
 
+
+# function:
+A JavaScript **function** is a block of code designed to perform a particular task. A JavaScript function is executed when "something" invokes it (calls it).
+
+**Function Keyword:**
+The keyword function is used to define a function in JavaScript.
+
+**Function Name:**
+This is the name you give to your function. It's used to call the function later when you want to execute the code within it.
+
+**Parameters:**
+These are optional variables listed in the parentheses after the function name. They act as placeholders for values that you can pass to the function when calling it. You can have zero or more parameters.
+
+**Function Body:**
+This is the block of code enclosed in curly braces {}. It contains the instructions that will be executed when the function is called. You can use the parameters and define local variables within the function body.
+
+**Return Statement:**
+If you want your function to produce an output, you can use the **return** statement to specify the value that the function should return. If the **return** statement is omitted, the function will return **undefined**.
+
+
+            function add(a, b) {
+              return a + b;
+            }
+            
+            let result = add(3, 5); // Calling the function and storing the result
+            console.log(result);    // Output: 8
+
+
+In this example, the function **add** takes two parameters, **a** and **b**, and returns their sum. When you call **add(3, 5)**, it returns **8**, which is then stored in the variable **result**.
