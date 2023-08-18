@@ -369,5 +369,49 @@ Example using **Boolean():**
             console.log(boolValue);              // Output: true
 
 
+# loops
 
-      
+used in JavaScript to perform repeated tasks based on a condition
+
+**1 .for Loop:**
+For loop is used to iterate a set of statements based on a condition.
+            
+            for(Initialization; Condition; Increment/decrement){  
+            //code  
+            } 
+            for(var i=0; i<=9;i++){
+            console.log("sudheer");
+            }
+
+**2 .While Loop:**
+While is also used to iterate a set of statements based on a condition. Usually while is preferred when number of iterations are not known in advance.
+
+              while (condition) {  
+                // code 
+              }  
+
+              
+              let i=1 
+              while (i<=100){
+              if(i%2==0){
+              console.log(i)
+              }
+              i++
+              }
+
+**3 .Do While Loop:**
+    Do-while is also used to iterate a set of statements based on a condition. It is mostly used when you need to execute the statements atleast once.
+
+
+
+            do {  
+              // code 
+            } while (condition); 
+
+            
+            let EvenNum=1;
+                do {
+                    console.log("THis is Even Num",EvenNum);
+                    EvenNum +=2;
+
+                }while (EvenNum <=100);
