@@ -319,3 +319,55 @@ If you want your function to produce an output, you can use the **return** state
 
 
 In this example, the function **add** takes two parameters, **a** and **b**, and returns their sum. When you call **add(3, 5)**, it returns **8**, which is then stored in the variable **result**.
+
+
+
+#  Type Casting:
+
+Type casting in JavaScript, also known as type conversion, refers to the process of changing the data type of a value from one type to another. JavaScript performs automatic type coercion in many cases, but explicit type casting allows you to control how values are converted from one type to another.
+
+There are two main types of type casting in JavaScript:
+
+**1.Implicit Type Casting (Type Coercion):**
+
+JavaScript automatically converts values from one type to another in certain situations. This often happens in operations involving different data types.
+
+              let num = 5 + "10"; // JavaScript coerces the number to a string
+              console.log(num);   // Output: "510"
+In this example, the number 5 is implicitly converted to a string and then concatenated with the string "10".
+
+**2. Explicit Type Casting:**
+
+Explicit type casting involves converting a value from one type to another using built-in functions or operators. There are several methods for explicit type casting in JavaScript:
+
+**parseInt()** and **parseFloat()**: Convert strings to integers or floating-point numbers.
+
+**Number()**: Converts a value to a number, regardless of its original type.
+
+**String()**: Converts a value to a string.
+
+**Boolean()**: Converts a value to a boolean.
+
+**toString()**: Converts a value to its string representation.
+
+Example using **Number()**:
+
+            let str = "42";
+            let num = Number(str); // Explicitly converting string to number
+            console.log(num);      // Output: 42
+
+Example using **String():**
+
+            let value = 123;
+            let strValue = String(value); // Explicitly converting number to string
+            console.log(strValue);       // Output: "123"
+            
+Example using **Boolean():**
+
+            let truthyValue = "hello";
+            let boolValue = Boolean(truthyValue); // Explicitly converting string to boolean
+            console.log(boolValue);              // Output: true
+
+
+
+      
