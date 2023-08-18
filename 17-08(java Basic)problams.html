@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //problam for print a table
+                for (let i=1;i<=10;i++){
+        printT(i);
+        console.log(" ");
+        }
+        function printT(s){
+            for(let i=1;i<=10;i++){
+                let row  =s+"*"+i+"="+s*i;
+            console.log(row)
+            }
+            
+        }
+        //print a even odd in the 1 to 20 numbers with using a name of each number
+                for (let i=0;i<=20;i++){
+            if(i%2==0){
+                console.log(i+" it is a even");
+            }
+            else{
+                console.log(i+" it is a odd");
+            }
+        }
+        //Write a JavaScript function that reverses a number.
+            function reverse_a_number(n)
+            {
+                n = n + " ";
+                return n.split(" ").reverse().join(" ");
+            }
+            console.log(Number(reverse_a_number(123456)));
+
+        //1.Create a function that takes two numbers as arguments and returns their sum.
+                    function key(a,b){
+                return a+b;
+            }
+            console.log(key(20,30));
+         // 2.Write a function that takes an integer minutes and converts it to seconds.
+                    function key(a){
+                let c=60*a;
+                return c;
+            }
+            console.log(key(2));
+           //3. Create a function that takes a number as an argument, increments the number by +1 and returns the result.
+           //4.Create a function that takes the age in years and returns the age in days.
+            function AgeInToDays(age){
+                return age * 365 ;
+            }
+            console.log(AgeInToDays(25));
+            //5.sniCreate a function that takes voltage and current and returns the calculated power.
+            function power(voltage,current){
+                return voltage * current ;
+            }
+            console.log("the power of the home is:",power(220,3600));
+            // 6.Write a function that returns the string "something" joined with a space " " and the given argument a.
+            function space(spc){
+                return spc +" ";
+            }
+            console.log(space("sudheer"));
+           //7. Create a function that takes two arguments. Both arguments are integers, a and b. Return true if one of them is 10 or if their sum is 10.
+            function name(a,b){
+                if(a==10 || b==10 || a+b==10){
+                    console.log("true");
+                }else{
+                    console.log("false");
+                }
+                
+            }
+            name(5,5);
+            
+
+    </script>
+</body>
+</html>
