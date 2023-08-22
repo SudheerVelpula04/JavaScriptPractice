@@ -415,3 +415,71 @@ While is also used to iterate a set of statements based on a condition. Usually 
                     EvenNum +=2;
 
                 }while (EvenNum <=100);
+
+# string methods:
+
+The **String** object is used to represent and manipulate a sequence of characters.
+
+
+**1.length:** Returns the length of the string.
+                
+                const str = "Hello, World!";
+                console.log(str.length); // Outputs: 13
+
+
+**2. toUpperCase()** and **toLowerCase():** Converts the string to uppercase or lowercase.
+
+
+            const str = "Hello, World!";
+            console.log(str.toUpperCase()); // Outputs: "HELLO, WORLD!"
+            console.log(str.toLowerCase()); // Outputs: "hello, world!"
+
+**3. charAt(index):** Returns the character at the specified index.
+
+            const str = "Hello";
+            console.log(str.charAt(0)); // Outputs: "H"
+            console.log(str.charAt(2)); // Outputs: "l"
+
+
+**4. substring(start, end):** Returns a substring starting from the start index and ending before the end index.
+
+          const str = "Hello, World!";
+          console.log(str.substring(7, 12)); // Outputs: "World"
+          
+**5. slice(start, end):** Similar to **substring**, but can also work with negative indices.
+
+                const str = "Hello, World!";
+                console.log(str.slice(7, 12)); // Outputs: "World"
+
+
+
+**6. indexOf(substring, fromIndex)** and **lastIndexOf(substring, fromIndex):** Finds the index of the first or last occurrence of the specified substring, starting from **fromIndex**.
+
+                
+                const str = "Hello, World!";
+                console.log(str.indexOf("World")); // Outputs: 7
+                console.log(str.lastIndexOf("l")); // Outputs: 9
+**7. startsWith(prefix)** and **endsWith(suffix):** Checks if the string starts with the specified prefix or ends with the specified suffix.
+
+                const str = "Hello, World!";
+                console.log(str.startsWith("Hello")); // Outputs: true
+                console.log(str.endsWith("World!")); // Outputs: true
+                
+**8. replace(oldValue, newValue):** Replaces occurrences of **oldValue** with **newValue**.
+
+              const str = "Hello, World!";
+              const newStr = str.replace("World", "Universe");
+              console.log(newStr); // Outputs: "Hello, Universe!"
+
+**9. split(separator, limit):** Splits the string into an array of substrings based on the **separator**. 
+
+
+                const str = "apple,banana,grape";
+                const arr = str.split(",");
+                console.log(arr); // Outputs: ["apple", "banana", "grape"]
+
+**10. trim():** Removes leading and trailing whitespace characters from the string.
+
+                  const str = "   Hello, World!   ";
+                  console.log(str.trim()); // Outputs: "Hello, World!"
+
