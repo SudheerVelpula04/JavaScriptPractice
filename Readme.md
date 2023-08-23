@@ -96,6 +96,137 @@ Object shorthand can save space and time by allowing users to use the same name 
 
              [1,2,3,4]
 
+   **Methods of Arrays**
+  
+    
+ **1. push(item1, item2, ...):** Adds one or more elements to the end of the array.
+  
+    
+                    let myArray = [1, 2, 3];
+                  myArray.push(4, 5);
+                  // myArray is now [1, 2, 3, 4, 5]
+  
+  **2. pop():** Removes and returns the last element of the array.
+  
+                  let myArray = [1, 2, 3, 4, 5];
+                  let poppedElement = myArray.pop(); // Returns 5
+                  // myArray is now [1, 2, 3, 4]
+                  
+  **3. shift():** Removes and returns the first element of the array.
+  
+                  let myArray = [1, 2, 3, 4, 5];
+                  let shiftedElement = myArray.shift(); // Returns 1
+                  // myArray is now [2, 3, 4, 5]
+  
+  **4. unshift(item1, item2, ...)**: Adds one or more elements to the beginning of the array.
+  
+                let myArray = [2, 3, 4, 5];
+                myArray.unshift(0, 1);
+                // myArray is now [0, 1, 2, 3, 4, 5]
+
+                
+  **5. concat(array1, array2, ...):** Combines two or more arrays, returning a new array.
+  
+                let array1 = [1, 2, 3];
+                let array2 = [4, 5, 6];
+                let combinedArray = array1.concat(array2);
+                // combinedArray is [1, 2, 3, 4, 5, 6]
+  
+  **6. slice(startIndex, endIndex)**: Returns a shallow copy of a portion of the array.
+  
+              let myArray = [1, 2, 3, 4, 5];
+              let slicedArray = myArray.slice(1, 4); // Returns [2, 3, 4]
+  
+  **7. splice(startIndex, deleteCount, item1, item2, ...):** Changes the contents of an array by removing or replacing existing elements and/or adding new elements.
+
+  
+              let myArray = [1, 2, 3, 4, 5];
+              myArray.splice(2, 2, 6, 7); // Removes elements at index 2 and 3, adds 6 and 7
+              // myArray is now [1, 2, 6, 7, 5]
+              
+  **8. forEach(callback(item, index, array)):** Executes a provided function once for each array element.
+
+  
+              let myArray = [1, 2, 3];
+              myArray.forEach(function(item, index) {
+                  console.log(item, index);
+              });
+
+              
+   **9. filter(callback(item, index, array)):** Creates a new array with all elements that pass the test implemented by the provided function.
+
+   
+               let myArray = [1, 2, 3, 4, 5];
+              let filteredArray = myArray.filter(function(item) {
+                  return item > 2;
+              });
+              // filteredArray is [3, 4, 5]
+              
+              
+  **10. map(callback(item, index, array))**: Creates a new array with the results of calling a provided function on every element.
+
+  
+                  let myArray = [1, 2, 3];
+              let squaredArray = myArray.map(function(item) {
+                  return item * item;
+              });
+              // squaredArray is [1, 4, 9]
+              
+  
+  **11. reduce(callback(accumulator, item, index, array), initialValue):** Applies a function against an accumulator and each element, reducing the array to a single value.
+
+  
+              let myArray = [1, 2, 3, 4, 5];
+              let sum = myArray.reduce(function(accumulator, item) {
+                  return accumulator + item;
+              }, 0);
+              // sum is 15
+              
+  **12. indexOf(item, startIndex):** Returns the first index at which a given element can be found in the array, or -1 if it is not present.
+  
+              let myArray = [10, 20, 30, 40, 50];
+              let index = myArray.indexOf(30); // Returns 2
+              
+  **13. includes(item, startIndex):** Determines whether the array contains a certain element, returning a boolean value.
+
+  
+              let myArray = [10, 20, 30, 40, 50];
+              let includesElement = myArray.includes(30); // Returns true
+  
+              
+  **14. every(callback(item, index, array)):** Checks if every element in the array passes a given test.
+
+  
+              let myArray = [10, 20, 30, 40, 50];
+              let allGreaterThanFive = myArray.every(function(item) {
+                  return item > 5;
+              }); // Returns true
+  
+              
+  **15. some(callback(item, index, array)):** Checks if at least one element in the array passes a given test.
+
+  
+              let myArray = [10, 20, 30, 40, 50];
+              let anyGreaterThanThirty = myArray.some(function(item) {
+                  return item > 30;
+              }); // Returns true
+  
+              
+  **16. sort(compareFunction):** Sorts the elements of an array in place and returns the sorted array.
+
+  
+                let myArray = [3, 1, 4, 1, 5, 9, 2, 6];
+                myArray.sort(); // Sorts numerically: [1, 1, 2, 3, 4, 5, 6, 9]
+  
+                
+  **17. reverse():** Reverses the order of elements in an array.
+
+  
+              let myArray = [1, 2, 3, 4, 5];
+              myArray.reverse(); // Reverses the array: [5, 4, 3, 2, 1]
+  
+              
+
 **3. Functions:** Represents a block of reusable code that can be invoked with arguments to perform a specific task. Functions are also objects in JavaScript.
 
             function add(a, b) {
