@@ -614,3 +614,65 @@ The **String** object is used to represent and manipulate a sequence of characte
                   const str = "   Hello, World!   ";
                   console.log(str.trim()); // Outputs: "Hello, World!"
 
+# Sorting Arrays:
+**1 .sort():**
+
+The sort() method in JavaScript is used to sort the elements of an array in place and returns the sorted array. By default, it converts elements to strings and sorts them based on their UTF-16 code unit values. However, you can provide a custom sorting function to define your own sorting criteria.
+
+              let fruits = ["banana", "apple", "orange", "grape"];
+              fruits.sort();
+              console.log(fruits); // Output: ["apple", "banana", "grape", "orange"]
+
+By default, the **sort()** method sorts elements as strings. This can lead to unexpected results when sorting numbers:
+
+          let numbers = [10, 2, 30, 5];
+          numbers.sort();
+          console.log(numbers); // Output: [10, 2, 30, 5] (not in numerical order)
+          
+To sort numbers numerically, you can provide a custom sorting function: 
+
+              let numbers = [10, 2, 30, 5];
+              numbers.sort(function(a, b) {
+                  return a - b;
+              });
+              console.log(numbers); // Output: [2, 5, 10, 30]
+**2.Numeric Sort:**
+
+By default, the **sort()** function sorts values as **strings**.
+
+This works well for strings ("Apple" comes before "Banana").
+
+However, if numbers are sorted as strings, "25" is bigger than "100", because "2" is bigger than "1".
+
+Because of this, the sort() method will produce incorrect result when sorting numbers.
+
+You can fix this by providing a **compare function**:
+
+**1.Ascending Numeric Sort:**
+
+                        let numbers = [10, 2, 5, 8, 1];
+                        numbers.sort(function(a, b) {
+                            return a - b;
+                        });
+                        
+                        console.log(numbers); // Output: [1, 2, 5, 8, 10]
+
+In the comparison function function(a, b) { return a - b; }, if the result is negative, a will be placed before b. If it's positive, b will be placed before a. If the result is zero, the order remains unchanged.
+
+**2. Descending Numeric Sort:**
+
+                      let numbers = [10, 2, 5, 8, 1];
+                      numbers.sort(function(a, b) {
+                          return b - a;
+                      });
+                      
+                      console.log(numbers); // Output: [10, 8, 5, 2, 1]
+                      
+**3. Simplified Arrow Function (ES6+):**
+
+                      let numbers = [10, 2, 5, 8, 1];
+                      let sortedNumbers = numbers.slice().sort((a, b) => a - b);
+                      
+                      console.log(sortedNumbers); // Output: [1, 2, 5, 8, 10]
+                      console.log(numbers); // Original array remains unchanged: [10, 2, 5, 8, 1]
+
