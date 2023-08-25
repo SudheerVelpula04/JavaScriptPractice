@@ -675,4 +675,65 @@ In the comparison function function(a, b) { return a - b; }, if the result is ne
                       
                       console.log(sortedNumbers); // Output: [1, 2, 5, 8, 10]
                       console.log(numbers); // Original array remains unchanged: [10, 2, 5, 8, 1]
+# JavaScript Array Iteration methods 
+
+**1. forEach()**: Executes a provided function once for each array element.
+
+                    let numbers = [1, 2, 3, 4, 5];
+                    numbers.forEach(function(number) {
+                        console.log(number);
+                    });
+
+**2. map():** Creates a new array with the results of calling a provided function on every element.
+
+                let numbers = [1, 2, 3];
+                let squaredArray = numbers.map(function(number) {
+                    return number * number;
+                }); // [1, 4, 9]
+                
+**3. filter():** Creates a new array with all elements that pass the test implemented by the provided function.
+
+                        let numbers = [1, 2, 3, 4, 5];
+                  let evenNumbers = numbers.filter(function(number) {
+                return number % 2 === 0;
+                  }); // [2, 4]
+
+  **4. reduce():** Applies a function against an accumulator and each element in the array, reducing it to a single value.      
+
+                let numbers = [1, 2, 3, 4, 5];
+                let sum = numbers.reduce(function(accumulator, number) {
+                    return accumulator + number;
+                }, 0); // 15
+
+**5. some():** Checks if at least one element in the array passes a test implemented by the provided function.
+
+                let numbers = [1, 2, 3, 4, 5];
+                let hasEven = numbers.some(function(number) {
+                    return number % 2 === 0;
+                }); // true
+
+                
+**6. every():** Checks if all elements in the array pass a test implemented by the provided function.
+
+
+                  let numbers = [2, 4, 6, 8, 10];
+                  let allEven = numbers.every(function(number) {
+                      return number % 2 === 0;
+                  }); // true
+
+**7. find():** Returns the first element in the array that satisfies the provided testing function.
+
+                let numbers = [1, 2, 3, 4, 5];
+                let firstEven = numbers.find(function(number) {
+                    return number % 2 === 0;
+                }); // 2
+
+                
+**8. findIndex():** Returns the index of the first element in the array that satisfies the provided testing function.
+
+                let numbers = [1, 2, 3, 4, 5];
+                let firstEvenIndex = numbers.findIndex(function(number) {
+                    return number % 2 === 0;
+                }); // 1 (index of number 2)
+
 
