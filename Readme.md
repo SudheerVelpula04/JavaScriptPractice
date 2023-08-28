@@ -736,4 +736,48 @@ In the comparison function function(a, b) { return a - b; }, if the result is ne
                     return number % 2 === 0;
                 }); // 1 (index of number 2)
 
+# JavaScript for...in Loop:
 
+The for...in statements combo iterates (loops) over the properties of an object.
+
+The code block inside the loop is executed once for each property.
+
+
+**Note:**
+
+Do not use for...in to iterate an array if the index order is important. Use a for loop instead.
+
+example:
+              const person = {fname:"John", lname:"Doe", age:25};
+              let text = "";
+              for (let x in person) {
+                text += person[x] + " ";
+              }
+ Iterate (loop) over the values of an array:
+
+ 
+              const cars = ["BMW", "Volvo", "Saab", "Ford"];
+              let text = "";
+              for (let x in cars) {
+                text += cars[x] + " ";
+              }
+# JavaScript for...of Loop:
+
+The for...of statements combo iterates (loops) over the values of any iterable.
+
+The code block inside the loop is executed once for each value.
+
+
+                // syntax
+                for (x of iterable) {
+                  code block to be executed
+                }
+
+
+Iterate (loop) over the values of an array:
+
+                let text = "";
+                const cars = ['BMW', 'Volvo', 'Mini'];
+                for (let x of cars) {
+                  text += x + " ";
+                }
