@@ -96,6 +96,137 @@ Object shorthand can save space and time by allowing users to use the same name 
 
              [1,2,3,4]
 
+   **Methods of Arrays**
+  
+    
+ **1. push(item1, item2, ...):** Adds one or more elements to the end of the array.
+  
+    
+                    let myArray = [1, 2, 3];
+                  myArray.push(4, 5);
+                  // myArray is now [1, 2, 3, 4, 5]
+  
+  **2. pop():** Removes and returns the last element of the array.
+  
+                  let myArray = [1, 2, 3, 4, 5];
+                  let poppedElement = myArray.pop(); // Returns 5
+                  // myArray is now [1, 2, 3, 4]
+                  
+  **3. shift():** Removes and returns the first element of the array.
+  
+                  let myArray = [1, 2, 3, 4, 5];
+                  let shiftedElement = myArray.shift(); // Returns 1
+                  // myArray is now [2, 3, 4, 5]
+  
+  **4. unshift(item1, item2, ...)**: Adds one or more elements to the beginning of the array.
+  
+                let myArray = [2, 3, 4, 5];
+                myArray.unshift(0, 1);
+                // myArray is now [0, 1, 2, 3, 4, 5]
+
+                
+  **5. concat(array1, array2, ...):** Combines two or more arrays, returning a new array.
+  
+                let array1 = [1, 2, 3];
+                let array2 = [4, 5, 6];
+                let combinedArray = array1.concat(array2);
+                // combinedArray is [1, 2, 3, 4, 5, 6]
+  
+  **6. slice(startIndex, endIndex)**: Returns a shallow copy of a portion of the array.
+  
+              let myArray = [1, 2, 3, 4, 5];
+              let slicedArray = myArray.slice(1, 4); // Returns [2, 3, 4]
+  
+  **7. splice(startIndex, deleteCount, item1, item2, ...):** Changes the contents of an array by removing or replacing existing elements and/or adding new elements.
+
+  
+              let myArray = [1, 2, 3, 4, 5];
+              myArray.splice(2, 2, 6, 7); // Removes elements at index 2 and 3, adds 6 and 7
+              // myArray is now [1, 2, 6, 7, 5]
+              
+  **8. forEach(callback(item, index, array)):** Executes a provided function once for each array element.
+
+  
+              let myArray = [1, 2, 3];
+              myArray.forEach(function(item, index) {
+                  console.log(item, index);
+              });
+
+              
+   **9. filter(callback(item, index, array)):** Creates a new array with all elements that pass the test implemented by the provided function.
+
+   
+               let myArray = [1, 2, 3, 4, 5];
+              let filteredArray = myArray.filter(function(item) {
+                  return item > 2;
+              });
+              // filteredArray is [3, 4, 5]
+              
+              
+  **10. map(callback(item, index, array))**: Creates a new array with the results of calling a provided function on every element.
+
+  
+                  let myArray = [1, 2, 3];
+              let squaredArray = myArray.map(function(item) {
+                  return item * item;
+              });
+              // squaredArray is [1, 4, 9]
+              
+  
+  **11. reduce(callback(accumulator, item, index, array), initialValue):** Applies a function against an accumulator and each element, reducing the array to a single value.
+
+  
+              let myArray = [1, 2, 3, 4, 5];
+              let sum = myArray.reduce(function(accumulator, item) {
+                  return accumulator + item;
+              }, 0);
+              // sum is 15
+              
+  **12. indexOf(item, startIndex):** Returns the first index at which a given element can be found in the array, or -1 if it is not present.
+  
+              let myArray = [10, 20, 30, 40, 50];
+              let index = myArray.indexOf(30); // Returns 2
+              
+  **13. includes(item, startIndex):** Determines whether the array contains a certain element, returning a boolean value.
+
+  
+              let myArray = [10, 20, 30, 40, 50];
+              let includesElement = myArray.includes(30); // Returns true
+  
+              
+  **14. every(callback(item, index, array)):** Checks if every element in the array passes a given test.
+
+  
+              let myArray = [10, 20, 30, 40, 50];
+              let allGreaterThanFive = myArray.every(function(item) {
+                  return item > 5;
+              }); // Returns true
+  
+              
+  **15. some(callback(item, index, array)):** Checks if at least one element in the array passes a given test.
+
+  
+              let myArray = [10, 20, 30, 40, 50];
+              let anyGreaterThanThirty = myArray.some(function(item) {
+                  return item > 30;
+              }); // Returns true
+  
+              
+  **16. sort(compareFunction):** Sorts the elements of an array in place and returns the sorted array.
+
+  
+                let myArray = [3, 1, 4, 1, 5, 9, 2, 6];
+                myArray.sort(); // Sorts numerically: [1, 1, 2, 3, 4, 5, 6, 9]
+  
+                
+  **17. reverse():** Reverses the order of elements in an array.
+
+  
+              let myArray = [1, 2, 3, 4, 5];
+              myArray.reverse(); // Reverses the array: [5, 4, 3, 2, 1]
+  
+              
+
 **3. Functions:** Represents a block of reusable code that can be invoked with arguments to perform a specific task. Functions are also objects in JavaScript.
 
             function add(a, b) {
@@ -483,3 +614,170 @@ The **String** object is used to represent and manipulate a sequence of characte
                   const str = "   Hello, World!   ";
                   console.log(str.trim()); // Outputs: "Hello, World!"
 
+# Sorting Arrays:
+**1 .sort():**
+
+The sort() method in JavaScript is used to sort the elements of an array in place and returns the sorted array. By default, it converts elements to strings and sorts them based on their UTF-16 code unit values. However, you can provide a custom sorting function to define your own sorting criteria.
+
+              let fruits = ["banana", "apple", "orange", "grape"];
+              fruits.sort();
+              console.log(fruits); // Output: ["apple", "banana", "grape", "orange"]
+
+By default, the **sort()** method sorts elements as strings. This can lead to unexpected results when sorting numbers:
+
+          let numbers = [10, 2, 30, 5];
+          numbers.sort();
+          console.log(numbers); // Output: [10, 2, 30, 5] (not in numerical order)
+          
+To sort numbers numerically, you can provide a custom sorting function: 
+
+              let numbers = [10, 2, 30, 5];
+              numbers.sort(function(a, b) {
+                  return a - b;
+              });
+              console.log(numbers); // Output: [2, 5, 10, 30]
+**2.Numeric Sort:**
+
+By default, the **sort()** function sorts values as **strings**.
+
+This works well for strings ("Apple" comes before "Banana").
+
+However, if numbers are sorted as strings, "25" is bigger than "100", because "2" is bigger than "1".
+
+Because of this, the sort() method will produce incorrect result when sorting numbers.
+
+You can fix this by providing a **compare function**:
+
+**1.Ascending Numeric Sort:**
+
+                        let numbers = [10, 2, 5, 8, 1];
+                        numbers.sort(function(a, b) {
+                            return a - b;
+                        });
+                        
+                        console.log(numbers); // Output: [1, 2, 5, 8, 10]
+
+In the comparison function function(a, b) { return a - b; }, if the result is negative, a will be placed before b. If it's positive, b will be placed before a. If the result is zero, the order remains unchanged.
+
+**2. Descending Numeric Sort:**
+
+                      let numbers = [10, 2, 5, 8, 1];
+                      numbers.sort(function(a, b) {
+                          return b - a;
+                      });
+                      
+                      console.log(numbers); // Output: [10, 8, 5, 2, 1]
+                      
+**3. Simplified Arrow Function (ES6+):**
+
+                      let numbers = [10, 2, 5, 8, 1];
+                      let sortedNumbers = numbers.slice().sort((a, b) => a - b);
+                      
+                      console.log(sortedNumbers); // Output: [1, 2, 5, 8, 10]
+                      console.log(numbers); // Original array remains unchanged: [10, 2, 5, 8, 1]
+# JavaScript Array Iteration methods 
+
+**1. forEach()**: Executes a provided function once for each array element.
+
+                    let numbers = [1, 2, 3, 4, 5];
+                    numbers.forEach(function(number) {
+                        console.log(number);
+                    });
+
+**2. map():** Creates a new array with the results of calling a provided function on every element.
+
+                let numbers = [1, 2, 3];
+                let squaredArray = numbers.map(function(number) {
+                    return number * number;
+                }); // [1, 4, 9]
+                
+**3. filter():** Creates a new array with all elements that pass the test implemented by the provided function.
+
+                        let numbers = [1, 2, 3, 4, 5];
+                  let evenNumbers = numbers.filter(function(number) {
+                return number % 2 === 0;
+                  }); // [2, 4]
+
+  **4. reduce():** Applies a function against an accumulator and each element in the array, reducing it to a single value.      
+
+                let numbers = [1, 2, 3, 4, 5];
+                let sum = numbers.reduce(function(accumulator, number) {
+                    return accumulator + number;
+                }, 0); // 15
+
+**5. some():** Checks if at least one element in the array passes a test implemented by the provided function.
+
+                let numbers = [1, 2, 3, 4, 5];
+                let hasEven = numbers.some(function(number) {
+                    return number % 2 === 0;
+                }); // true
+
+                
+**6. every():** Checks if all elements in the array pass a test implemented by the provided function.
+
+
+                  let numbers = [2, 4, 6, 8, 10];
+                  let allEven = numbers.every(function(number) {
+                      return number % 2 === 0;
+                  }); // true
+
+**7. find():** Returns the first element in the array that satisfies the provided testing function.
+
+                let numbers = [1, 2, 3, 4, 5];
+                let firstEven = numbers.find(function(number) {
+                    return number % 2 === 0;
+                }); // 2
+
+                
+**8. findIndex():** Returns the index of the first element in the array that satisfies the provided testing function.
+
+                let numbers = [1, 2, 3, 4, 5];
+                let firstEvenIndex = numbers.findIndex(function(number) {
+                    return number % 2 === 0;
+                }); // 1 (index of number 2)
+
+# JavaScript for...in Loop:
+
+The for...in statements combo iterates (loops) over the properties of an object.
+
+The code block inside the loop is executed once for each property.
+
+
+**Note:**
+
+Do not use for...in to iterate an array if the index order is important. Use a for loop instead.
+
+example:
+              const person = {fname:"John", lname:"Doe", age:25};
+              let text = "";
+              for (let x in person) {
+                text += person[x] + " ";
+              }
+ Iterate (loop) over the values of an array:
+
+ 
+              const cars = ["BMW", "Volvo", "Saab", "Ford"];
+              let text = "";
+              for (let x in cars) {
+                text += cars[x] + " ";
+              }
+# JavaScript for...of Loop:
+
+The for...of statements combo iterates (loops) over the values of any iterable.
+
+The code block inside the loop is executed once for each value.
+
+
+                // syntax
+                for (x of iterable) {
+                  code block to be executed
+                }
+
+
+Iterate (loop) over the values of an array:
+
+                let text = "";
+                const cars = ['BMW', 'Volvo', 'Mini'];
+                for (let x of cars) {
+                  text += x + " ";
+                }
