@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+       let data= {
+        "version": 0.2,
+        "env": {
+        "parameter-store": {
+        "AWS_ACCESS_KEY_ID": "/CodeBuild/MY_AWS_ACCESS_KEY_ID",
+        "AWS_SECRET_ACCESS_KEY": "/CodeBuild/MY_AWS_SECRET_ACCESS_KEY"
+    }
+    },
+    "phases": {
+        "install": {
+        "commands": [
+            "aws --version",
+            "echo Installing app dependencies...",
+            "curl -LO https://storage.googleapis.com/kubernetes-release/release/v1.23.6/bin/linux/amd64/kubectl",
+            "chmod +x ./kubectl",
+            "sudo mv ./kubectl /usr/local/bin/kubectl",
+            "kubectl version --client --output=yaml"
+        ]
+    },
+    "pre_build": {
+      "commands": [
+        "$(aws ecr get-login --no-include-email --region us-west-2)",
+        "REPOSITORY_URI=807031380725.dkr.ecr.us-west-2.amazonaws.com/shephered-server-image",
+        "TAG=\"$(echo $CODEBUILD_RESOLVED_SOURCE_VERSION | head -c 8)\"",
+        "IMAGE_TAG=build-$(echo $CODEBUILD_BUILD_ID | awk -F\":\" '{print $2}')"
+      ]
+    },
+    "build": {
+      "commands": [
+        "docker build --tag \"${REPOSITORY_URI}:${TAG}\" .",
+        "docker push \"${REPOSITORY_URI}:${TAG}\""
+      ]
+    },
+    "post_build": {
+      "commands": [
+        "echo Image build has been completed and pushed to ECR",
+        "CREDENTIALS=$(aws sts assume-role --role-arn arn:aws:iam::807031380725:role/gc-staging-sheperedserver --role-session-name gc-staging-sheperedserver --duration-seconds 900)",
+        "export AWS_ACCESS_KEY_ID=\"$(echo ${CREDENTIALS} | jq -r '.Credentials.AccessKeyId')\"",
+        "export AWS_SECRET_ACCESS_KEY=\"$(echo ${CREDENTIALS} | jq -r '.Credentials.SecretAccessKey')\"",
+        "export AWS_SESSION_TOKEN=\"$(echo ${CREDENTIALS} | jq -r '.Credentials.SessionToken')\"",
+        "export AWS_EXPIRATION=$(echo ${CREDENTIALS} | jq -r '.Credentials.Expiration')",
+        "aws eks update-kubeconfig --name gc-staging-ekscluster",
+        "kubectl set image deployment/scalable-nginx-example example=\"${REPOSITORY_URI}:${TAG}\""
+      ]
+    }
+  }
+}
+console.log(data.phases['install'].commands[5])
+    </script>
+</body>
+</html>

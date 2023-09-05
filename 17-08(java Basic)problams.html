@@ -50,7 +50,8 @@
            //3. Create a function that takes a number as an argument, increments the number by +1 and returns the result.
            //4.Create a function that takes the age in years and returns the age in days.
             function AgeInToDays(age){
-                return age * 365 ;
+                let leepyear=age/4
+                return age * 365+leepyear;
             }
             console.log(AgeInToDays(25));
             //5.sniCreate a function that takes voltage and current and returns the calculated power.
@@ -73,7 +74,36 @@
                 
             }
             name(5,5);
+           //8. Create a function that takes two strings as arguments and returns either true or false depending on whether the total number of characters in the first string is equal to the total number of characters in the second string.
+            function TwoStrings(str1,str2){
+                if(str1.length===str2.length){
+                    console.log("true");
+                }else{
+                    console.log("false")
+
+                }
+            }
+            TwoStrings("hello","mouse");
+            //9. Create a function that takes a name and returns a greeting in the form of a string. Don't use a normal function, use an arrow function.
+            var greeting=(string)=>{
+                return string + " ";
+            }
             
+            console.log(greeting("sudheer"));
+           //10. Create a function that takes an array of 10 numbers (between 0 and 9) and returns a string of those numbers formatted as a phone number (e.g. (555) 555-5555).
+           function Mobilenum(m){
+            for(i=0;i<=m.length;i++){
+              console.log(m[i])  
+            
+            if(i==2 || i==5){
+                    console.log("-")
+                }
+            }
+            
+           }
+           Mobilenum([1,2,3,4,5,6,7,8,9,0]);
+           
+               
 
     </script>
 </body>

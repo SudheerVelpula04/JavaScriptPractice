@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //  let a= [1,52,2,88,6,99,10,55,4,9,];
+        //  let newarray=a.forEach(function(value,index,arr){
+        //     return value+"="+index;
+        //  })
+        //  console.log(newarray);
+        //  var n=[0,1,43,534,234,1246,765];
+        //  n.forEach(name);
+        // function name(value,index,arr){
+        //     console.log(value+"="+index)
+        // }
+        // let a =[1,52,2,88,6,99,10,55,4,9,];
+        // let b=a.map(function(value,index,arr){
+        // return value*2+"="+index;
+        // })
+        // console.log(b);
+        // let a =[1,52,2,88,6,99,10,55,4,9,];
+        // let b=a.filter(function(value,index,arr){
+        // return value>20;
+        // })
+        // console.log(b)
+
+        let a =[1,52,2,88,6,99,10,55,4,9,];
+        let b=a.reduceRight(function(total,value,index,arr){
+        return total=total+value*2;
+        }
+        ,0)
+        console.log(b)
+        // let a =[1,52,2,88,6,99,10,55,4,9,];
+        // let b=a.findIndex(name)
+        // function name(value,index,arr){
+        // return value>92;
+        // }
+        // console.log(b)
+      
+          
+    </script>
+</body>
+</html>

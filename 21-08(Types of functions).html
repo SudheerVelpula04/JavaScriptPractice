@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //normal funtion
+        function name(n1,n2){
+            var a=n1+n2;
+            console.log(a);
+        }
+        name(6,7);
+        //functon expretion
+        const san=function name1(n1,n2){
+            var a=n1*n2;
+            console.log(a);
+        }
+        san(25,30);
+        //function anonomy
+        //hear we dont use the name of the function jejst use the funtion that set.
+        var z=function(n1,n2){
+            var a=n1==n2;
+            console.log(a);
+        }
+        z(22,65);
+        //IIFE
+        (function(n1,n2){
+            var a=n1==n2;
+            console.log(a);
+        })(25,25);
+        //arrow function
+        var x=(n1,n2)=>{
+            var a=n1==n2;
+        console.log(a)        }
+        x(22,85);
+    </script>
+</body>
+</html>

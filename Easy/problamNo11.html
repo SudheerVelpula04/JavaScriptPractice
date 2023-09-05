@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //Create a function that returns an array of strings sorted by length in ascending order.
+        //sortByLength(["a", "ccc", "dddd", "bb"]) ➞ ["a", "bb", "ccc", "dddd"]
+        function name(sortByLength){
+           console.log(sortByLength.sort());
+           return sortByLength;
+        }
+        name(["a", "ccc", "dddd", "bb"])
+        //for loops
+        debugger 
+        function sort(arr){
+            for(i=0;i<arr.length;i++){
+                for(j=i+1;j<arr.length;j++){
+                    if(arr[j].length>arr[i].length){
+                        let temp =arr[i];
+                        arr[i]=arr[j];
+                        arr[j]=temp;
+                    }
+                }
+            }return arr;
+        }
+        let arr=["a","ccc","dddd","bb","ggg","rrrrr"];
+        console.log(sort(arr))
+
+    </script>
+</body>
+</html>

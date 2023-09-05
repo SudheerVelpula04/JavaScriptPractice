@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //Program to find factorial of number.
+			// Input: n=5
+			// Output: 120
+			// Explanation: 5 x 4 x 3 x 2 x 1 = 120
+            let n =5;
+            function fun(n){
+                if (n===0){
+                    return 1;
+
+                }
+                else{
+                    return n*fun(n-1);
+                }
+            }
+            console.log(fun(n))
+
+    </script>
+</body>
+</html>

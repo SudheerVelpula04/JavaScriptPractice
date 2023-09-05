@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //     function vow(value){
+        // for(i=0;i<value.length;i++){
+        // val=value[i].toLowerCase();
+        //     if(val =="a"||val=="e"||val=="i"||val=="o"||val=="u"){
+        //     // val[i]++
+        //     console.log(val);
+        //     }
+            
+        // }
+        // }
+        // console.log(vow("uiFGECWbhbiyfutdfEIFBCIvwfiu")) -->
+        debugger 
+        function sort(arr){
+            for(i=0;i<arr.length;i++){
+                for(j=i+1;j<arr.length;j++){
+                    if(arr[j].length>arr[i].length){
+                        let temp =arr[i];
+                        arr[i]=arr[j];
+                        arr[j]=temp;
+                    }
+                }
+            }return arr;
+        }
+        let arr=["a","ccc","dddd","bb","ggg","rrrrr"];
+        console.log(sort(arr))
+    </script>
+</body>
+
+</html>

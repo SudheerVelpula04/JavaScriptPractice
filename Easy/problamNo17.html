@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 17. Create a function that takes a string and returns the number (count) of vowels contained within it.
+        // Example:
+        // countVowels("Celebration") ➞ 5
+        // var countVowels ="celebration";
+        // function name( vowels){
+        //     let count = countVowels.match(/[aeiou]/g);
+        //     if (count===countVowels?0 count.length){
+        //         console.log(count);
+        //     }
+        //     return vowels;
+        // }
+        // name(const)
+        // function name(vowels){
+            
+        //     console.log(vowels.match(/[aeiou]/ig).length)
+            
+        // }
+        // name("Celebration")
+        //for loop
+        function name1(vow){
+            let count=0
+         for(i=0;i<vow.length;i++){
+            if(vow[i].match(/[aeiou]/ig)){
+                count++
+            }
+
+         }  
+        console.log(count) 
+        }
+        name1("Celebration")
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //for each
+        var n=[0,1,43,534,234,1246,765]
+        var newone=n.forEach(function(value,index,arr){
+            return index + "=" + value;
+           
+        })
+       console.log(newone)
+       //or for loop
+       var are=[0,1,43,534,234,1246,765]
+       for (var i=0;i<are.length;i++){
+        console.log(i+ "=" +are[i]);
+       }
+        //map
+        var arr=[10,20,30,40,50];
+        arr.map(function(value,index,arr)
+        {
+        return value*2;
+        })
+        console.log(arr);
+        // filter
+        var n=[10,20,30,40,50]
+        var m=n.filter(function(value,index,varr){
+            return value >= 20;
+        })
+        console.log(m);
+        //reduce
+        var x=[10,20,30,40,50];
+        var total=x.reduce(function(sum,value,index,arr){
+            return sum * value
+        })
+       console.log(total);
+       //every
+       var y=[10,20,30,40,50]
+       var below=y.every(function(value,index,arr){
+        return value < 40;
+           
+       })
+       console.log(below)
+       //some
+       var ame=[10,20,30,40,50]
+       var above=ame.some(function(value,index,arr){
+        return value < 40;
+       })
+        console.log(above);
+    </script>
+</body>
+</html>

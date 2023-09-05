@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //Create a function that takes an array of numbers and returns the second largest number.       
+            function name(a){
+                for (i=0;i<a.length;i++){
+                    var m=i;
+                    for(j=i+1;j<a.length;j++){
+                        if(j>i){
+                            m=j
+                            
+                            
+                        }
+                    }
+                    
+                }
+               
+        }
+        name([10, 40, 30, 20, 50])
+        ///
+        function largenum(arr){
+        let large =[];
+        for(i=0;i<arr.length;i++){
+        if(arr[i]>large){
+        large=arr[i];
+        }
+        }
+        return large-10;
+        }
+        console.log(largenum([10, 40, 30, 20, 50]))
+    </script>
+</body>
+</html>

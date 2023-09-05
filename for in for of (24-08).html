@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //for in loop
+        // const person = {
+        //                   name: "sudheer",
+        //                     age: 25,
+        //             occupation: "Engineer"
+        //     };
+        //     for(const kay in person){
+        //         console.log(key +":"+ person[key]);
+
+        //     }
+        const person = {fname:"John", lname:"Doe", age:25};
+        let text = "";
+        for (let x in person) {
+        text +=x+":"+ person[x] + " ";
+        }
+        console.log(text)
+        // another
+        var fruits=['mango','apple','banana','kiwi']
+            for(var  index in fruits){
+                console.log(index +"::"+ fruits[index]);
+            }
+            //for of
+            let car = "";
+            const cars = ['BMW', 'Volvo', 'Mini'];
+            for (let x of cars) {
+            car += x + " ";
+            }
+            console.log(car);
+            // one more
+            let name = " sudheer velpula";
+            for (let x of name) {
+            name += x + "-";
+            }
+            console.log(name);
+    </script>
+</body>
+</html>

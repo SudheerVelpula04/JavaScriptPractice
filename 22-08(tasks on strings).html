@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    let day = prompt("enter the day:");
+        switch (day) {
+            case "Monday":
+                console.log("It's the start of the week.");
+                break;o
+            case "Friday":
+                console.log("its ia a Week End.");
+                break;
+            default:
+                console.log("It's a regular day.");
+        }
+        
+          var z="True friends are never apart, maybe in distance but never in heart."
+          let x=(z.match(/[aeiou]/g));
+          console.log(x.length);
+          console.log(z.length);
+          //with a if statement
+          function vowel(v) {
+            let vowels = 0;
+            let constants = 0;
+            for (let i = 0; i < v.length; i++) {
+                if (v[i] == 'a' || v[i] == "A" || v[i] == "i" || v[i] == "e" || v[i] == "E" ||
+                    v[i] == "o" || v[i] == "O" || v[i] == "u" || v[i] == "U") {
+                    vowels++;
+
+                }
+                else {
+                    constants++;
+                }
+
+            }
+            console.log("no of vowels is: " + vowels)
+            console.log("no of constants is: " + constants)
+
+
+        }
+        vowel("cOdErS");
+
+    </script>
+</body>
+</html>
