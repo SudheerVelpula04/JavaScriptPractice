@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<li>
+    <ol>
+
+    </ol>
+</li>
+<body>
+    <script>
+        let one=localStorage.getItem("data1")
+        console.log(one)
+        let data2=JSON.parse(one)
+        console.log(data2);
+        let sir =document.querySelector("ol")
+        for(i=0;i<data2.length;i++){
+            let list1=document.createElement("li");
+            list1.innerText=data2[i].id
+            console.log(list1);
+            sir.appendChild(list1)
+            let img1=document.createElement("img");
+            img1.setAttribute("src",data2[i].image);
+            console.log(data2[i].image);
+            img1.style.width="200px";
+            img1.style.height="200px";
+            sir.appendChild(img1)
+            let cloth=document.createElement("category")
+            cloth.innerText=data2[i].category
+            console.log(cloth);
+            sir.appendChild(cloth)
+            let dis=document.createElement("description")
+            dis.innerText=data2[i].description
+            console.log(dis)
+            sir.appendChild(dis)
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./registerpage.css">
+
+
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <title>Register Page</title>
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-warning">
+        <div class="container-fluid">
+            <button type="button" class="btn btn-danger"><a class="navbar-brand" href="./mainpage.html">Namaste 🙏 Javascript</a></button>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="./registerpage.html">Register</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="./loginpage.html">Login</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#">Contact</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#">Reviews</a>
+                    </li>
+                </ul>
+                <form class="d-flex">
+                    <input class="form-control me-2 active" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-success active" type="submit">Search</button>
+                </form>
+            </div>
+        </div>
+    </nav>
+
+
+    <!-- registration Form -->
+
+    <div class="container block d-flex justify-content-center align-items-center m-5 p-5">
+        <form action="" id="registerform">
+            <div class="box">
+                <label for="Username">Username</label>
+                <div class="item">
+                    <input type="text" name="Username" id="Username">
+                </div>
+                <p id="result1"></p>
+
+            </div>
+            <div class="box">
+                <label for="Password">Password</label>
+                <div class="item">
+                    <input type="password" name="Password" id="Password">
+                </div>
+                <p id="result2"></p>
+            </div>
+            <div class="box">
+                <label for="cnfrpass">Confirm Password</label>
+                <div class="item">
+                    <input type="password" name="ConfirmPassword" id="cnfrpass">
+                </div>
+                <p id="result3"></p>
+            </div>
+            <input type="submit" value="Submit" class="btn btn-primary m-3">
+        </form>
+    </div>
+
+    
+
+
+
+
+        <script>
+            let form= document.getElementById("registerform");
+            let result1=document.getElementById("result1")
+            let result2 = document.getElementById("result2")
+            let result3 = document.getElementById("result3")
+
+
+
+            form.addEventListener("submit",function(event){
+                event.preventDefault();
+
+                let username = document.getElementById("Username").value
+                let passwrd = document.getElementById("Password").value
+                let cnfrpasswrd = document.getElementById("cnfrpass").value
+
+
+
+                // username validation
+
+                if(username.length > 8){
+                    result1.style.display="block";
+                    result1.style.color="red";
+                    result1.textContent ="Username is more than 8 characters";
+                    return false;
+                }
+                else if(username.length < 8 && username.length > 1){
+                    result1.style.display = "block"
+                    result1.style.color = "blue";
+                    result1.textContent = "Username is less than 8 characters"
+                    return false;
+                }
+                else if (username.length === 0) {
+                    result1.style.display = "block"
+                    result1.style.color = "red";
+                    result1.textContent = "fill the username"
+                    return false;
+                }
+                else{
+                    result1.style.display = "none";
+                
+                }
+
+
+                // password validation
+
+                if (passwrd.length > 8) {
+                    result2.style.display = "block";
+                    result2.style.color = "red";
+                    result2.textContent = "Password is more than 8 characters";
+                    return false;
+                }
+                else if (passwrd.length < 8 && passwrd.length > 1) {
+                    result2.style.display = "block"
+                    result2.style.color = "blue";
+                    result2.textContent = "Password is less than 8 characters"
+                    return false;
+                }
+                else if (passwrd.length === 0) {
+                    result2.style.display = "block"
+                    result2.style.color = "red";
+                    result2.textContent = "fill the Password"
+                    return false;
+                }
+                else {
+                    result2.style.display = "none";
+
+                }
+
+
+                // Confirm password validation
+                if (cnfrpasswrd.length === 0) {
+                    result3.style.display = "block";
+                    result3.style.color = "red";
+                    result3.textContent = "Fill the Passwords.";
+                    return false;
+                }
+
+                else if (cnfrpasswrd !== passwrd) {
+                    result3.style.display = "block";
+                    result3.style.color = "red";
+                    result3.textContent = "Passwords do not match.";
+                    return false;
+                } 
+                else {
+                    result3.style.display = "none";
+                }
+
+
+                
+                let obj = {
+                    "username": username,
+                    "password": passwrd,
+                    "confirm password": cnfrpasswrd
+                }
+
+
+                fetch("http://localhost:3000/posts", {
+                    method: "get"
+                })
+                    .then((val) => val.json())
+                    .then((val) => {
+                        console.log(val);
+            
+                        return fetch("http://localhost:3000/posts", {
+                            method: "POST",
+                            headers: {
+                                'Content-Type': 'application/json',
+                            },
+                            body: JSON.stringify(obj)
+                        });
+                    })
+                    .then((val) => val.json())
+                    .then((val) => {
+                        console.log(val);
+                        // window.location.href = "./loginpage.html"
+                    })
+                    .catch((error) => {
+                        console.error("Error:", error);
+                    });
+
+
+                
+            })
+
+
+
+        </script>
+
+
+
+
+
+
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+            crossorigin="anonymous"></script>
+</body>
+
+</html>
